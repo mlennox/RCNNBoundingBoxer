@@ -1,0 +1,4 @@
+{
+  "ignore": ["*.spec.js"],
+  "verbose": true
+}

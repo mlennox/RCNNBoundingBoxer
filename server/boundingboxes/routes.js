@@ -1,10 +1,10 @@
-import _router from 'koa-router'
+import koaRouter from 'koa-router'
 import { boundingboxHandler } from './index'
 
-const router = new _router({
-    prefix: 'boundingboxes'
+const router = new koaRouter({
+    prefix: '/boundingboxes'
 })
 
-router.get('/', boundingboxHandler)
+router.get('/something', boundingboxHandler)
 
 export default router

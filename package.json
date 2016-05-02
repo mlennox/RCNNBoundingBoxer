@@ -18,7 +18,7 @@
     "debug": "^2.2.0",
     "fs": "0.0.2",
     "koa": "^2.0.0",
-    "koa-router": "^5.4.0"
+    "koa-router": "^7.0.1"
   },
   "scripts": {
     "test": "ava",

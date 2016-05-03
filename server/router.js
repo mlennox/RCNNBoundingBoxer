@@ -14,7 +14,7 @@ import koaRouter from 'koa-router'
 import { createLogger } from './logger'
 
 const logger = createLogger('mainrouter')
-const router = new koaRouter();
+const router = new koaRouter()
 
 /**
  * syntactic sugar for registering the routes

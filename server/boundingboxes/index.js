@@ -1,14 +1,15 @@
 import { createLogger } from '../logger/'
+import render from '../../templates/'
 
 const logger = createLogger('boundingboxes')
 
 export const boundingboxHandler = async (ctx, next) => {
     logger.debug('get handler')
 
-    ctx.body = 'hit the bounding box handler'
-    ctx.status = 200
-    
-    
+    var body = await render('home', { title: 'some title here'})
 
-    await next
+    logger.debug('body?', body)
+
+    ctx.body = body
+    ctx.status = 200
 }

@@ -5,6 +5,6 @@ const router = new koaRouter({
     prefix: '/boundingboxes'
 })
 
-router.get('/something', boundingboxHandler)
+router.get('/', boundingboxHandler)
 
 export default router

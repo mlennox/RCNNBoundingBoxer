@@ -26,16 +26,18 @@ export default async (ctx, next) => {
     try {
         await next()
 
-        logger.debug('now we will attempt to render', ctx)
+        logger.debug('now we will check if we need to render a template...')
 
         if (ctx.body && ctx.body.view){
+            logger.debug('...we will render template : ', ctx.body.view)
             // reset the content-type header so the browser won't be expecting JSON
             ctx.response.header['content-type'] = null
 
             // now fetch the data and set the body
             var content = await render(ctx.body.view, ctx.body.data || {})
-            logger.debug('rendered content', content)
             ctx.body = await render('main', { content: content })
+        } else {
+            logger.debug('...no template render required')
         }
 
         next()

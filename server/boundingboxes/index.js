@@ -9,7 +9,5 @@ export const boundingboxHandler = async (ctx, next) => {
         view: 'home',
         data: { title: 'some title here'}
     }
-    //
-    // next()
 
 }

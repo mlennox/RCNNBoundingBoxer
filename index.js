@@ -13,8 +13,8 @@ app.use(router.routes())
 
 // static files
 app.use(async (ctx, next) => {
-    logger.debug('ctx path', ctx.path)
-    if (ctx.path === '/static'){
+    if (ctx.path.indexOf('/static') === 0){
+        logger.debug('we will serve the static content', ctx.path)
         await send(ctx, ctx.path)
     }
     next()

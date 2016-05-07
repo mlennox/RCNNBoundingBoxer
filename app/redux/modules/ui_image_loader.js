@@ -1,8 +1,5 @@
-/**
- * Created by mlennox on 07/05/2016.
- */
-import {create_logger} from '../../../logger'
-const logger = create_logger('ui_image_loader')
+import { createLogger } from '../../../logger/'
+const logger = createLogger('ui_image_loader')
 
 
 // constants
@@ -10,14 +7,14 @@ export const ADD_IMAGE = 'ADD_IMAGE'
 export const REMOVE_IMAGE = 'REMOVE_IMAGE'
 
 // Actions
-export function addImage (image) => {
+export const addImage = (image) => {
     return {
         type: ADD_IMAGE,
         image: image
     }
 }
 
-export function removeImage (image) => {
+export const removeImage = (image) => {
     return {
         type: REMOVE_IMAGE,
         image: image
@@ -34,7 +31,7 @@ export const actions = {
 const ACTION_HANDLERS = {
     ADD_IMAGE: (state, action) => {
         logger.debug('adding an image', state)
-        // add the image to the list
+        return [...state, action.image]
     },
     REMOVE_IMAGE: (state, action) => {
         logger.debug('removing an image', state)

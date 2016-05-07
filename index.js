@@ -20,6 +20,4 @@ app.use(async (ctx, next) => {
     next()
 })
 
-
-
 app.listen(3000, () => logger.debug('server is listening on port 3000'))

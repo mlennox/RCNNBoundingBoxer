@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import { createLogger } from '../../../logger/'
 const logger = createLogger('ui_image_loader')
 
@@ -35,7 +36,14 @@ const ACTION_HANDLERS = {
     },
     REMOVE_IMAGE: (state, action) => {
         logger.debug('removing an image', state)
-        // remove the image from the list
+        var index = _.findIndex(state, (el) => {
+            return el === action.image
+        })
+
+        return (index === -1)
+            ? state
+            : state.slice(0, index)
+                .concat(state.slice(index + 1))
     }
 }
 

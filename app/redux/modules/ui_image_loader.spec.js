@@ -27,3 +27,23 @@ test('check add image adds the image', t => {
     var diffs = difference(expected_image_list_after, image_list_after)
     t.is(diffs.length, 0)
 })
+
+test('test remove image does not mutate the array', t => {
+    var image_list_before = ['something']
+
+    freeze(image_list_before)
+
+    t.notThrows(() => {
+        reducer(image_list_before, {type: REMOVE_IMAGE, image: 'something'} )
+    })
+})
+
+test('check remove image removes the image', t => {
+
+    var image_list_before = ['something', 'another']
+    var expected_image_list_after = ['something']
+    var image_list_after = reducer(image_list_before, {type: REMOVE_IMAGE, image: 'another'} )
+
+    var diffs = difference(expected_image_list_after, image_list_after)
+    t.is(diffs.length, 0)
+})

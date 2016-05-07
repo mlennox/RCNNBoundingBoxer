@@ -1,32 +1,22 @@
-/**
- * Created by mlennox on 07/05/2016.
- */
-import React, { PropTypes } from 'react'
-import { connect } from 'react-redux'
+import React from 'react'
 
-/**
- *
- */
-export class BoxerView extends React.Component {
-    static propTypes = {
-        images_list: PropTypes.array.isRequired,
-        labels_list: PropTypes.array.isRequired,
-        current_image: PropTypes.string.isRequired
-    }
+const boxer_main = (props) =>
+    <section>
+        <nav>
+            <ul>
+                {props.image_list.map((image) => {
+                    return <li>{image}</li>
+                })}
+            </ul>
+        </nav>
+        <div>
+            // list current image here
+        </div>
+    </section>
 
-    componentDidMount() {
-
-    }
-
-    render () {
-        return (<p>boxer component</p>)
-    }
+boxer_main.propTypes = {
+    image_list: React.PropTypes.array.isRequired
+    
 }
 
-const mapStateToProps = (state) => ({
-    images_list: state.
-})
-
-export default connect((mapStateToProps), {
-
-})(BoxerView)
+export default boxer_main

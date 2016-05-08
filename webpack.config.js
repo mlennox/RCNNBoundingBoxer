@@ -30,7 +30,7 @@ webpack_config.module.loaders = [
         exclude: [/node_modules/],
         loader: 'babel',
         query: {
-            presets: ['es2015', 'stage-3', 'react']
+            presets: ['es2015-node5', 'stage-3', 'react']
         }
     },
     {

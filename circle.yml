@@ -1,5 +1,5 @@
 machine:
   node:
-    version: 4.4.3
+    version: 5.11.1
   pre:
     - npm install -g npm@3.8.8

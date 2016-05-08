@@ -7,7 +7,7 @@
   },
   "description": "In HTML, allow you draw boxes over elements you wish to train your system and add labels",
   "main": "index.js",
-  "author": "",
+  "author": "Mark Lennox",
   "license": "ISC",
   "scripts": {
     "test": "ava",

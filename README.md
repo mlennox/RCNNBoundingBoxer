@@ -1,6 +1,8 @@
 # Boxing and category assignment tool for training RCNN
 This tool is designed to make it easier to add boundary boxes and category labels to an image that will be used to train a neural network.
 
+![Circle-Ci status](https://circleci.com/gh/mlennox/RCNNBoundingBoxer.svg?style=shield&circle-token=:circle-token)
+
 ## Usage
 You will first specify a list of images either by including them in the 'source_image' folder before launching the tool or later by loading them from the file system after the app is launched.
 

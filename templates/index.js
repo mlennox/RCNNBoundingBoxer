@@ -1,5 +1,5 @@
 import views from 'co-views'
-import { createLogger } from '../server/logger'
+import { createLogger } from '../logger/'
 var logger = createLogger('templates')
 
 var render = views('./views', {

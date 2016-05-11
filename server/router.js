@@ -11,7 +11,7 @@
  */
 
 import koaRouter from 'koa-router'
-import { createLogger } from './logger'
+import { createLogger } from '../logger/'
 
 const logger = createLogger('mainrouter')
 const router = new koaRouter()

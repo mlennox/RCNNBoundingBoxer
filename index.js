@@ -1,5 +1,5 @@
 import koa from 'koa'
-import { createLogger } from './server/logger'
+import { createLogger } from './logger/'
 import router from './server/router'
 import send from 'koa-send'
 import template from './templates'
@@ -20,4 +20,4 @@ app.use(async (ctx, next) => {
     next()
 })
 
-app.listen(3000, () => logger.debug('server is listening on port 3000'))
+app.listen(3000, () => console.log('server is listening on http://localhost:3000'))

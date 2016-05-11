@@ -22,7 +22,7 @@ webpack_config.entry = {
 }
 
 webpack_config.output = {
-    path: __dirname + '/build/ui/',
+    path: __dirname + '/dist/ui/',
     filename: 'bundle.js'
 }
 

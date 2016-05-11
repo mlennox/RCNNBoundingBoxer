@@ -9,6 +9,7 @@ const logger = createLogger('compile')
 const paths = config.utils_paths
 
 logger.debug('Create webpack compiler.')
+
 const compiler = webpack(webpackConfig)
 
 compiler.run((err, stats) => {

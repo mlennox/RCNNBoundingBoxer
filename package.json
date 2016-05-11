@@ -15,9 +15,9 @@
     "dev": "DEBUG=app:* babel-node index.js",
     "dev:watch": "nodemon --watch ./ --watch *.js --exec npm run dev",
     "build": "npm run build:server & npm run build:app",
-    "build:server": "babel server/ --ignore **/*.spec.js -d build/server/",
-    "build:server:watch": "babel -w server/ --ignore **/*.spec.js -d build/server/",
-    "build:app": "DEBUG=app:* webpack --debug",
+    "build:server": "babel server/ --ignore **/*.spec.js -d dist/server/",
+    "build:server:watch": "babel -w server/ --ignore **/*.spec.js -d dist/server/",
+    "build:app": "DEBUG=app:* babel-node ./build/compile_app",
     "start": "DEBUG=app:* babel-node index.js"
   },
   "babel": {
@@ -60,6 +60,7 @@
     "react-dom": "^15.0.2",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
-    "webpack": "^1.13.0"
+    "webpack": "^1.13.0",
+    "yargs": "^4.7.0"
   }
 }

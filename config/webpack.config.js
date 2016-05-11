@@ -1,8 +1,10 @@
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import { createLogger } from './logger/'
+import { createLogger } from '../logger/'
 
 var logger = createLogger('webpack','config')
+
+logger.debug('configuring webpack')
 
 const webpack_config = {
     name: 'RCNN',
@@ -38,3 +40,7 @@ webpack_config.module.loaders = [
         loader: 'json'
     }
 ]
+
+export default webpack_config
+
+logger.debug('webpack config', webpack_config)

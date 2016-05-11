@@ -17,7 +17,7 @@
     "build": "npm run build:server & npm run build:app",
     "build:server": "babel server/ --ignore **/*.spec.js -d build/server/",
     "build:server:watch": "babel -w server/ --ignore **/*.spec.js -d build/server/",
-    "build:app": "webpack --debug",
+    "build:app": "DEBUG=app:* webpack --debug",
     "start": "DEBUG=app:* babel-node index.js"
   },
   "babel": {
@@ -43,6 +43,7 @@
     "babel-preset-stage-3": "^6.5.0",
     "babel-register": "^6.8.0",
     "deep-freeze-es6": "^1.0.0",
+    "fs-extra": "^0.30.0",
     "html-webpack-plugin": "^2.16.1"
   },
   "dependencies": {

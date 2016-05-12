@@ -10,19 +10,19 @@ const webpack_config = {
     name: 'RCNN',
     target: 'web',
     resolve: {
-        root: __dirname,
+        root: __dirname + '/..',
         extensions: ['', '.js', '.jsx']
     },
     module: {}
 }
 
 webpack_config.entry = {
-    app: __dirname + '/app/app.js'
+    app: webpack_config.resolve.root + '/app/app.js'
     // , vendor: []
 }
 
 webpack_config.output = {
-    path: __dirname + '/dist/ui/',
+    path: webpack_config.resolve.root + '/dist/ui/',
     filename: 'bundle.js'
 }
 

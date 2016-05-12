@@ -1,8 +1,8 @@
 import fs from 'fs-extra'
 import { createLogger } from '../logger/'
 import webpack from 'webpack'
-import webpackConfig from '../webpack.config'
-import config from '../config'
+import webpackConfig from '../config/webpack.config'
+import config from '../config/'
 
 const logger = createLogger('compile')
 
@@ -36,5 +36,5 @@ compiler.run((err, stats) => {
     }
 
     logger.debug('Copy static assets to dist folder.')
-    fs.copySync(paths.client('static'), paths.dist())
+    fs.copySync(paths.client('../static'), paths.dist())
 })
